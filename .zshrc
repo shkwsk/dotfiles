@@ -177,6 +177,8 @@ alias mv='mv -i'
  
 alias mkdir='mkdir -p'
 alias emacs='/usr/local/bin/emacs-24.4'
+
+alias octave='/usr/local/octave/3.8.0/bin/octave-3.8.0'
  
 # sudo の後のコマンドでエイリアスを有効にする
 alias sudo='sudo '
