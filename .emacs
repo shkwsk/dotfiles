@@ -31,10 +31,10 @@
 ;(setq inhibit-startup-message t)
 
 ;;ウインドウサイズ最大化
-(set-frame-parameter nil 'fullscreen 'maximized)
+;(set-frame-parameter nil 'fullscreen 'maximized)
 
 ;;背景透明化
-(set-frame-parameter nil 'alpha 70)
+(set-frame-parameter nil 'alpha 90)
 
 ;;背景黒 文字緑 
 (set-background-color "black")
