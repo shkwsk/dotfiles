@@ -28,7 +28,7 @@
 (global-linum-mode t)
 
 ;;; 起動時の画面はいらない
-;(setq inhibit-startup-message t)
+(setq inhibit-startup-message t)
 
 ;;ウインドウサイズ最大化
 ;(set-frame-parameter nil 'fullscreen 'maximized)
