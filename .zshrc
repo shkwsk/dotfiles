@@ -6,6 +6,10 @@ export PATH="/usr/local/Cellar/coreutils/8.23_1/libexec/gnubin:/usr/local/bin:/u
 export PYTHONPATH="/usr/local/lib/python2.7/site-packages/"
 # export PYTHONPATH="/usr/local/python/bin:"$PYTHONPATH
 
+# go-lang path
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
+
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
