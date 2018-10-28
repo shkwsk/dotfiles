@@ -10,6 +10,19 @@ export PYTHONPATH="/usr/local/lib/python2.7/site-packages/"
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 
+# node path
+export NODEPATH=$HOME/.nodebrew/current/bin
+export PATH=$NODEPATH:$PATH
+
+# ruby path
+export RUBYPATH=$HOME/.rbenv
+export PATH=$RUBYPATH/bin:$PATH
+eval "$(rbenv init - zsh)"
+
+# google cloud platform
+source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
+source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
+
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
@@ -158,19 +171,3 @@ case ${OSTYPE} in
 	alias ls='ls -F --color=auto'
 	;;
 esac
-
-#########################################
-# nvm と指定されたバージョンの Node.js がインストール済みの場合だけ
-# 設定を有効にする
-if [[ -f ~/.nvm/nvm.sh ]]; then
-    source ~/.nvm/nvm.sh
-    
-    if which nvm >/dev/null 2>&1 ;then
-	_nodejs_use_version="v0.12.7"
-	if nvm ls | grep -F -e "${_nodejs_use_version}" >/dev/null 2>&1 ;then
-	    nvm use "${_nodejs_use_version}" >/dev/null
-	    export NODE_PATH=${NVM_PATH}_modules${NODE_PATH:+:}${NODE_PATH}
-	fi
-	unset _nodejs_use_version
-    fi
-fi
