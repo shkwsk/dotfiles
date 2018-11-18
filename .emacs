@@ -1,12 +1,32 @@
 ;; ver 0.0.0
 
 ;; elispフォルダ内のelファイルを読み込めるようにする
+
+;; Added by Package.el.  This must come before configurations of
+;; installed packages.  Don't delete this line.  If you don't want it,
+;; just comment it out by adding a semicolon to the start of the line.
+;; You may delete these explanatory comments.
+(package-initialize)
+
 (setq load-path (cons "~/.emacs.d/elisp" load-path))
 
 ;;M-x install-elispコマンドを使えるようにする
 (require 'install-elisp)
 ;;elファイルのインストール先
 (setq install-elisp-repository-directory "~/.emacs.d/elisp/")
+
+;; タブにスペースを使用する
+(setq-default tab-width 2 indent-tabs-mode nil)
+
+;; package一覧追加
+(require 'package)
+(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
+(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
+(package-initialize)
+
+;; yaml mode
+;;(require 'yaml-mode)
+;;(add-to-list 'auto-mode-alist '("\\.yml$\\|\\.yaml$" . yaml-mode))
 
 ;; ツールバーを非表示
 ;(tool-bar-mode nil)
@@ -82,14 +102,15 @@
 (setq frame-title-format (format "emacs@%s : %%f" (system-name)))
 
 (custom-set-variables
-  ;; custom-set-variables was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages (quote (yaml-mode php-mode go-mode)))
  '(safe-local-variable-values (quote ((encoding . utf-8)))))
 (custom-set-faces
-  ;; custom-set-faces was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  )
