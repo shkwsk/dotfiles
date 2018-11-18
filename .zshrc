@@ -17,11 +17,15 @@ export PATH=$NODEPATH:$PATH
 # ruby path
 export RUBYPATH=$HOME/.rbenv
 export PATH=$RUBYPATH/bin:$PATH
-eval "$(rbenv init - zsh)"
+if [ -d /usr/local/Celler/ruby ]; then
+    eval "$(rbenv init - zsh)"
+fi
 
 # google cloud platform
-source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
-source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
+if [ -d /usr/local/Caskroom/google-cloud-sdk ]; then
+    source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
+    source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
+fi
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -159,13 +163,8 @@ fi
 ########################################
 # OS 別のls設定
 export CLICOLOR=1
-export LSCOLORS=DxGxcxdxCxegedabagacad
-eval "`dircolors -b ~/.dir_colors`"
+export LSCOLORS=ExFxcxdxBxegedabagacad
 case ${OSTYPE} in 
-    darwin*)
-	#Mac用の設定
-	alias ls='gls --color'
-	;;
     linux*)
 	#Linux用の設定
 	alias ls='ls -F --color=auto'
