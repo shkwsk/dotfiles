@@ -28,6 +28,10 @@
 ;;(require 'yaml-mode)
 ;;(add-to-list 'auto-mode-alist '("\\.yml$\\|\\.yaml$" . yaml-mode))
 
+;; markdown-mode
+;; m-x package-list-package, install markdown-mode | once
+(setq auto-mode-alist (cons '("\\.md" . markdown-mode) auto-mode-alist))
+
 ;; ツールバーを非表示
 ;(tool-bar-mode nil)
 (if window-system
@@ -106,7 +110,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages (quote (yaml-mode php-mode go-mode)))
+ '(package-selected-packages (quote (markdown-mode yaml-mode php-mode go-mode)))
  '(safe-local-variable-values (quote ((encoding . utf-8)))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -114,3 +118,4 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+(put 'downcase-region 'disabled nil)
