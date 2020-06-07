@@ -2,6 +2,8 @@
 source ~/.bashrc
 
 export PATH="/usr/local/Cellar/coreutils/8.23_1/libexec/gnubin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/texbin"
+# pyinstaller
+export PATH="/usr/local/Cellar/python/3.7.1/Frameworks/Python.framework/Versions/3.7/bin":$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
 export PYTHONPATH="/usr/local/lib/python2.7/site-packages/"
 # export PYTHONPATH="/usr/local/python/bin:"$PYTHONPATH
@@ -126,13 +128,13 @@ bindkey '^R' history-incremental-pattern-search-backward
 
 ########################################
 # エイリアス
-
 alias la='ls -a'
 alias ll='ls -l'
 
 alias rm='~/dotfiles/rm.sh'
 alias cp='cp -i'
 alias mv='mv -i'
+alias findgrep='find . -name "*" | xargs grep -nI --color $1 2>/dev/null'
 
 alias mkdir='mkdir -p'
 
@@ -142,6 +144,9 @@ alias sudo='sudo '
 # グローバルエイリアス
 alias -g L='| less'
 alias -g G='| grep'
+
+# chrome
+alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
 
 # C で標準出力をクリップボードにコピーする
 # mollifier delta blog : http://mollifier.hatenablog.com/entry/20100317/p1
