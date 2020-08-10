@@ -176,3 +176,9 @@ case ${OSTYPE} in
 	alias ls='ls -F --color=auto'
 	;;
 esac
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/shkwsk/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/shkwsk/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/shkwsk/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/shkwsk/google-cloud-sdk/completion.zsh.inc'; fi
